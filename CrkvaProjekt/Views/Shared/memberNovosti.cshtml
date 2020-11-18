@@ -17,19 +17,14 @@
     <link href="~/lib/bootstrap/startbootstrap-blog-home-gh-pages/css/blog-home.css" rel="stylesheet">
     <style type="text/css">
 
-        body {
-            background: #c2a073;
-            background-position: top;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+    body { background-image: url("https://cdn.hipwallpaper.com/i/21/64/hF6GSH.jpg"); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; }
 
         .mb-4 {
             border-bottom: thick double #000000;
         }
 
         .card-body {
-            background: #c2a073;
+            background: #adb5bd;
         }
 
         .moj-img {
@@ -46,14 +41,42 @@
         }
 
         .text-new {
-            background: #c2a073;
+            background: #6c7d8f;
             color: #212529;
         }
-
+        .card-header {
+            background-color: #6c7d8f;
+        }
         .lista {
             list-style-type: none;
             margin: 0px;
             padding: 0px;
+        }
+        #headerslika {
+            position: relative;
+            top: 25px;
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+        #container1 {
+            background: #f8f9fa;
+        }
+        .centered {
+            position: absolute;
+            left: 35%;
+            top: 8px;
+            font-family: Georgia,sans-serif;
+            font-weight: bold;
+            font-size: 200%;
+        }
+
+        @@media(max-width:415px) {
+            #headerslika {
+                padding-top: 45px;
+            }
         }
 
             .lista li a {
@@ -72,7 +95,7 @@
          .col-md-4{
              padding-top:75px;
          }
-        @@media (max-width:395px) {
+        @@media (max-width:405px) {
             .moj-img {
                 float: none;
             }
@@ -85,7 +108,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/Home/Index">Saborna Crkva Mostar</a>
+            <a class="navbar-brand" href="/Home/Index" style="font-size:200%;">Saborna Crkva Mostar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -114,8 +137,13 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
-
+    <div id="container1" class="container">
+        <div id="headerslika">
+            <a href="/Home/Index">
+                <img style="object-fit:cover; width:100%; height:100px;" src="https://www.frontal.ba/img/s/750x400/upload/images/DEJAN/hrammostar.jpg" />
+            </a>
+            <div class="centered">Saborna Crkva Mostar</div>
+        </div>
         <div class="row">
 
             <!-- Blog Entries Column -->
@@ -134,17 +162,17 @@
         <div class="card-body">
             @if (novosti.Slika != null)
             {
-<img class="moj-img" src="data:image;base64,@System.Convert.ToBase64String(novosti.Slika)" alt="Card image cap"> }
+    <img class="moj-img" src="data:image;base64,@System.Convert.ToBase64String(novosti.Slika)" alt="Card image cap"> }
 else
 {
-<img class="moj-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1200px-No_image_3x4.svg.png" alt="Card image cap" />}
+    <img class="moj-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1200px-No_image_3x4.svg.png" alt="Card image cap" />}
             <h2 class="card-title">@novosti.Naslov</h2>
             @if (novosti.Text.Length > 200)
             {
-<p class="card-text">@novosti.Text.Substring(0, 200) ...</p> }
+    <p class="card-text">@novosti.Text.Substring(0, 200) ...</p> }
 else
 {
-<p class="card-text">@novosti.Text</p>}
+    <p class="card-text">@novosti.Text</p>}
             <a href="/ProcitajVise/PrikaziNovosti?NovostiID=@novosti.NovostiID" class="btn btn-primary">Pročitaj više &rarr;</a>
         </div>
         <div class="card-footer text-new">
@@ -154,17 +182,17 @@ else
     </div>}
                 <!-- Blog Post -->
                 <!--<div class="card mb-4">
-                    <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="card-title">Post Title</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                        <a href="#" class="btn btn-primary">Read More &rarr;</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        Posted on January 1, 2020 by
-                        <a href="#">Start Bootstrap</a>
-                    </div>
-                </div>-->
+                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">Post Title</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on January 1, 2020 by
+                    <a href="#">Start Bootstrap</a>
+                </div>
+            </div>-->
                 <!-- Pagination -->
                 @{ var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
                     var nextDisabled = !Model.HasNextPage ? "disabled" : ""; }
