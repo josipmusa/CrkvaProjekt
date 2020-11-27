@@ -18,6 +18,12 @@
     <!-- Custom styles for this template -->
     <link href="~/lib/bootstrap/startbootstrap-blog-home-gh-pages/css/blog-home.css" rel="stylesheet">
     <style>
+        body {
+            background-image: url("https://cdn.hipwallpaper.com/i/21/64/hF6GSH.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
         .kolumna {
             float: left;
             width: 25%;
@@ -51,20 +57,14 @@
             color: white;
             font-size: 35px;
             cursor: pointer;
-        }
-        body {
-            background: #c2a073;
-            background-position: top;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+        }      
 
         .mb-4 {
             border-bottom: thick double #000000;
         }
 
         .card-body {
-            background: #73c2b9;
+            background: #8597aa;
         }
 
         .moj-img {
@@ -109,6 +109,34 @@
 
         .col-md-4 {
             padding-top: 75px;
+        }
+        #container1 {
+            background: #adb5bd;
+        }
+
+        #headerslika {
+            position: relative;
+            top: 25px;
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .centered {
+            position: absolute;
+            left: 35%;
+            top: 8px;
+            font-family: Georgia,sans-serif;
+            font-weight: bold;
+            font-size: 200%;
+        }
+
+        @@media(max-width:415px) {
+            #headerslika {
+                padding-top: 45px;
+            }
         }
         @@media (max-width:768px) {
             .kolumna img {
@@ -167,8 +195,14 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div id="container1" class="container">
 
+        <div id="headerslika">
+            <a href="/Home/Index">
+                <img style="object-fit:cover; width:100%; height:100px;" src="https://www.frontal.ba/img/s/750x400/upload/images/DEJAN/hrammostar.jpg" />
+            </a>
+            <div class="centered">Saborna Crkva Mostar</div>
+        </div>
         <div class="row">
 
             <!-- Blog Entries Column -->
@@ -188,7 +222,7 @@
             <img class="moj-img" src="data:image;base64,@System.Convert.ToBase64String(Model.SlikaThumbnail)" alt="Card image cap"> }
         else
         {
-            <img class="moj-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1200px-No_image_3x4.svg.png" alt="Card image cap" />}
+    <img class="moj-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1200px-No_image_3x4.svg.png" alt="Card image cap" />}
                         <h2 class="card-title">@Model.Naslov</h2>
                         <p class="card-text">@Model.Text</p>
                     </div>
@@ -198,17 +232,17 @@
                 </div>
                 <!-- Blog Post -->
                 <!--<div class="card mb-4">
-        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-        <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-        </div>
-        <div class="card-footer text-muted">
-            Posted on January 1, 2020 by
-            <a href="#">Start Bootstrap</a>
-        </div>
-    </div>-->
+                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">Post Title</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on January 1, 2020 by
+                    <a href="#">Start Bootstrap</a>
+                </div>
+            </div>-->
                 <!-- Slike -->
                 <div class="card my-4">
                     <h5 class="card-header">Slika</h5>
@@ -222,9 +256,9 @@
                     <h2>Galerija novosti</h2>
                     @foreach (var x in Model.lista)
                     {
-            <div class="kolumna">
-                <img src="data:image;base64,@System.Convert.ToBase64String(x.Slika)" width="158" height="126" onclick="myFunction(this);" />
-            </div>}
+        <div class="kolumna">
+            <img src="data:image;base64,@System.Convert.ToBase64String(x.Slika)" width="158" height="126" onclick="myFunction(this);" />
+        </div>}
                 </div>
 
             </div>
@@ -233,6 +267,12 @@
             <!-- Sidebar Widgets Column -->
             <div class="col-md-4">
 
+                <div class="card my-4">
+                    <h5 class="card-header">Promijeni jezik</h5>
+                    <div class="card-body">
+                        <button class="btn btn-secondary" onclick="location.href='@Url.Action("PrikaziNovostiCir", "ProcitajVise")?NovostiID=@Model.NovostiID'">Ćirilica</button>
+                    </div>
+                </div>
                 <!-- Search Widget -->
                 <div class="card my-4">
                     <h5 class="card-header">Pretraži novosti</h5>
@@ -319,7 +359,7 @@
                         </div>
 
                     </div>
-                </div>  
+                </div>
 
             </div>
 

@@ -16,18 +16,18 @@
     <!-- Custom styles for this template -->
     <link href="~/lib/bootstrap/startbootstrap-blog-home-gh-pages/css/blog-home.css" rel="stylesheet">
    <style type="text/css">
-
        body {
-           background-color:skyblue;
-           background-position: top;
+           background-image: url("https://cdn.hipwallpaper.com/i/21/64/hF6GSH.jpg");
            background-repeat: no-repeat;
+           background-attachment: fixed;
            background-size: cover;
        }
+
        .mb-4{
            border-bottom:thick double #000000;
        }
        .card-body {
-           background: #73c2b9;
+           background: #8597aa;
        }
        .moj-img {
            padding: 0px;
@@ -54,7 +54,7 @@
            padding:0px;
        }
        #container1 {
-           background: #c2a073;
+           background: #adb5bd;
        }
            .lista li a {
                text-align: center;
@@ -140,7 +140,7 @@
     <div id="container1" class="container">
         <div id="headerslika">
             <a href="/Home/Index">
-                <img style="object-fit:cover; width:100%; height:100%;"   src="https://www.frontal.ba/img/s/750x400/upload/images/DEJAN/hrammostar.jpg" />
+                <img style="object-fit:cover; width:100%; height:100px;" src="https://www.frontal.ba/img/s/750x400/upload/images/DEJAN/hrammostar.jpg" />
             </a>
             <div class="centered">Saborna Crkva Mostar</div>
         </div>
@@ -214,6 +214,14 @@ else
 
             <!-- Sidebar Widgets Column -->
             <div class="col-md-4">
+
+
+                <div class="card my-4">
+                   <h5 class="card-header">Promijeni jezik</h5>
+                    <div class="card-body">
+                       <button class="btn btn-secondary"  onclick="location.href='@Url.Action("IndexCir", "Home")'">Ćirilica</button>
+                    </div>
+                </div>
 
                 <!-- Search Widget -->
                 <div class="card my-4">

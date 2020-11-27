@@ -8,9 +8,10 @@ namespace CrkvaProjekt.ViewModels
 {
     public class NovostiPrikaziVM
     {
-        public List<Novosti> Novosti { get; set; }
-        public int CurrentPageIndex { get; set; }
-
-        public int PageCount { get; set; }
+        public int NovostiID { get; set; }
+        public string Text { get; set; }
+        public byte[] Slika { get; set; }
+        public DateTime DatumObjavljivanja { get; set; }
+        public string Naslov { get; set; }
     }
 }
